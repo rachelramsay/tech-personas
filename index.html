@@ -347,7 +347,7 @@
   /* PAGINATION CONTROLS */
   .pager {
     max-width: 720px;
-    margin: 1.5rem auto 0;
+    margin: 1.5rem auto;
     padding: 1.25rem 2rem;
     background: #ffffff;
     border: 3px solid var(--ink);
@@ -395,10 +395,42 @@
     color: var(--navy-deep);
     text-align: center;
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
   .pager-status strong {
     color: var(--burgundy);
     font-weight: 900;
+  }
+  .pager-select {
+    font-family: "Helvetica Neue", "Arial Black", sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 8px 32px 8px 12px;
+    border: 2px solid var(--ink);
+    border-radius: 8px;
+    background: var(--yellow);
+    color: var(--burgundy);
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23711322' d='M2 4l4 4 4-4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    max-width: 100%;
+  }
+  .pager-select:hover {
+    background-color: var(--burgundy);
+    color: var(--yellow);
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23f5d76e' d='M2 4l4 4 4-4z'/%3E%3C/svg%3E");
+  }
+  .pager-select:focus {
+    outline: 2px solid var(--burgundy);
+    outline-offset: 2px;
   }
   footer {
     text-align: center;
@@ -784,6 +816,15 @@
   <h1>Field guide to the natural habitat</h1>
   <p class="page-subtitle">Specimens observed, classified, and gently roasted.</p>
 </div>
+
+<nav class="pager" aria-label="Card navigation">
+  <button class="pager-btn" id="prev-btn" type="button">← Back</button>
+  <div class="pager-status">
+    <span>Dossier <strong id="current-num">01</strong> of <strong>28</strong></span>
+    <select class="pager-select" id="pager-select" aria-label="Jump to dossier"></select>
+  </div>
+  <button class="pager-btn" id="next-btn" type="button">Next →</button>
+</nav>
 
 <div class="card-wrapper">
 <article class="card is-active" data-index="1" id="card-1">
@@ -2670,12 +2711,6 @@
 
 </div>
 
-<nav class="pager" aria-label="Card navigation">
-  <button class="pager-btn" id="prev-btn" type="button">← Back</button>
-  <div class="pager-status">Dossier <strong id="current-num">01</strong> of <strong>28</strong> · <span id="current-name">Meta</span></div>
-  <button class="pager-btn" id="next-btn" type="button">Next →</button>
-</nav>
-
 <footer>The big tech personality audit · 27 specimens classified · 1 summary</footer>
 
 <script>
@@ -2684,18 +2719,25 @@
   const prevBtn = document.getElementById('prev-btn');
   const nextBtn = document.getElementById('next-btn');
   const currentNum = document.getElementById('current-num');
-  const currentName = document.getElementById('current-name');
+  const select = document.getElementById('pager-select');
   let idx = 0;
 
   function pad(n) { return String(n).padStart(2, '0'); }
+
+  cards.forEach((card, i) => {
+    const name = card.querySelector('.company-name').textContent;
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = pad(i + 1) + ' · ' + name;
+    select.appendChild(opt);
+  });
 
   function render() {
     cards.forEach((card, i) => {
       card.classList.toggle('is-active', i === idx);
     });
-    const name = cards[idx].querySelector('.company-name').textContent;
     currentNum.textContent = pad(idx + 1);
-    currentName.textContent = name;
+    select.value = idx;
     prevBtn.disabled = idx === 0;
     nextBtn.disabled = idx === cards.length - 1;
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2707,9 +2749,14 @@
   nextBtn.addEventListener('click', () => {
     if (idx < cards.length - 1) { idx++; render(); }
   });
+  select.addEventListener('change', () => {
+    idx = parseInt(select.value, 10);
+    render();
+  });
 
-  // Keyboard arrows for fun
+  // Keyboard arrows for fun — but not while the dropdown is focused
   document.addEventListener('keydown', (e) => {
+    if (document.activeElement === select) return;
     if (e.key === 'ArrowLeft' && idx > 0) { idx--; render(); }
     if (e.key === 'ArrowRight' && idx < cards.length - 1) { idx++; render(); }
   });
