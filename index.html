@@ -42,23 +42,23 @@
   }
   .hero-tiger {
     background: #0B171F;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 4rem;
     position: relative;
     z-index: 2;
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 1rem;
     border-bottom: 3px solid var(--ink);
   }
   .hero-tiger svg {
     display: block;
     width: 138px;
     height: auto;
+    flex-shrink: 0;
   }
   .page-header {
+    flex: 1;
     text-align: center;
-    max-width: 640px;
-    margin: 2.5rem auto 2.5rem;
     padding: 0 1rem;
     position: relative;
     z-index: 2;
@@ -69,22 +69,23 @@
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    color: var(--burgundy);
-    margin-bottom: 0.75rem;
+    color: var(--yellow);
+    margin-bottom: 0.5rem;
   }
   h1 {
     font-family: "Helvetica Neue", "Arial Black", sans-serif;
     font-weight: 900;
     font-size: 36px;
     letter-spacing: -0.02em;
-    color: var(--navy);
+    color: var(--pale-blue);
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
   }
   .page-subtitle {
     font-size: 14px;
     font-style: italic;
-    color: var(--teal);
+    color: var(--pale-blue);
+    opacity: 0.75;
   }
   .card-wrapper {
     padding: 0 1rem 3rem;
@@ -450,6 +451,14 @@
     .body-content { padding: 1.5rem; }
     .pager { padding: 1rem 1.25rem; }
     .pager-btn { padding: 8px 12px; font-size: 11px; }
+    .hero-tiger {
+      flex-direction: column;
+      padding: 1.25rem 1rem;
+      gap: 0.75rem;
+    }
+    .hero-tiger svg { width: 96px; }
+    .page-header { padding: 0; }
+    .eyebrow { font-size: 10px; letter-spacing: 0.2em; }
   }
 </style>
 </head>
@@ -809,729 +818,172 @@
     </g>
   </g>
 </svg>
-</div>
-
 <div class="page-header">
   <div class="eyebrow">The big tech personality audit</div>
   <h1>Field guide to the natural habitat</h1>
   <p class="page-subtitle">Specimens observed, classified, and gently roasted.</p>
 </div>
+</div>
 
 <nav class="pager" aria-label="Card navigation">
   <button class="pager-btn" id="prev-btn" type="button">← Back</button>
   <div class="pager-status">
-    <span>Dossier <strong id="current-num">01</strong> of <strong>28</strong></span>
     <select class="pager-select" id="pager-select" aria-label="Jump to dossier"></select>
+    <span id="status-text"></span>
   </div>
   <button class="pager-btn" id="next-btn" type="button">Next →</button>
 </nav>
 
 <div class="card-wrapper">
 <article class="card is-active" data-index="1" id="card-1">
-  <div class="hero">
-    <img class="hero-img" src="images/meta-gorilla.jpg" alt="Silverback gorilla representing Meta" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(meta-gorilla.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Meta</div>
-      <div class="animal-tag">Silverback gorilla · Younger millennial</div>
-    </div>
+  <div class="name-banner" style="position: static; border-top: none;">
+    <div class="company-name" style="font-size: 36px;">The Whole Habitat</div>
+    <div class="animal-tag">Where the companies live.</div>
   </div>
   <div class="body-content">
-    <p class="archetype">The reformed theater kid who discovered jiu-jitsu and a podcast microphone in the same week.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Compression shirt, oversized gold chain, grappling shorts, smart glasses indoors</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Electrolyte stack with creatine. "I don't really drink anymore, brother."</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Surprisingly high. Instagram still prints money. The Ray-Bans are unironically slick.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Innovative + sketchy</span>
-      <span class="tag tag-2">Cool + hated</span>
-    </div>
+    <p class="archetype">Every company we've audited, plotted on the three matrices side by side. Patterns emerge.</p>
+
     <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Used to apologize to Congress in a chair too big for him. Now wants to cage-fight a billionaire and has <em>opinions</em> about masculine energy in the workplace. The metaverse was his crypto phase — we don't talk about it. AI is the new fixation; the Ray-Bans are unironically cool, which somehow makes it worse.</p>
+      <div class="section-label" style="display: block; font-size: 20px; letter-spacing: 3px; text-align: center; border-bottom: none; padding: 0; margin-bottom: 16px;">Matrix 1 · Innovation × Ethics</div>
+      <p class="section-body" style="font-size: 16px; color: var(--teal); font-style: italic; text-align: center;">The top-right quadrant is the small, virtuous corner. The bottom-left is where most of enterprise software lives.</p>
+      <div style="margin: 1rem 0; padding: 0 40px;"><svg viewBox="0 0 520 550" role="img" aria-label="Innovation × Ethics matrix" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;overflow:visible;">
+      <rect x="40" y="40" width="440" height="440" fill="#ffffff" stroke="#1a1410" stroke-width="1.5"/>
+      <line x1="260.0" y1="40" x2="260.0" y2="480" stroke="#1a1410" stroke-width="0.7" stroke-dasharray="4 3"/>
+      <line x1="40" y1="260.0" x2="480" y2="260.0" stroke="#1a1410" stroke-width="0.7" stroke-dasharray="4 3"/>
+      <text x="260.0" y="28" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="middle" letter-spacing="1.5">↑ INNOVATIVE</text>
+      <text x="260.0" y="502" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="middle" letter-spacing="1.5">↓ STAGNANT</text>
+      <text x="32" y="264.0" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="end" letter-spacing="1.5">SKETCHY ←</text>
+      <text x="488" y="264.0" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="start" letter-spacing="1.5">→ ETHICAL</text>
+      <circle cx="414.0" cy="84.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="420.0" y="87.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Anthropic</text>
+      <circle cx="436.0" cy="106.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="442.0" y="109.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Stripe</text>
+      <circle cx="392.0" cy="150.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="398.0" y="153.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Shopify</text>
+      <circle cx="326.0" cy="172.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="332.0" y="175.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Workday</text>
+      <circle cx="216.0" cy="62.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="65.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Nvidia</text>
+      <circle cx="194.0" cy="84.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="87.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">OpenAI</text>
+      <circle cx="106.0" cy="128.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="112.0" y="131.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Meta</text>
+      <circle cx="128.0" cy="106.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="134.0" y="109.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Tesla</text>
+      <circle cx="150.0" cy="172.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="175.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Uber</text>
+      <circle cx="62.0" cy="194.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="68.0" y="197.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">X</text>
+      <circle cx="304.0" cy="282.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="310.0" y="285.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Microsoft</text>
+      <circle cx="326.0" cy="392.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="332.0" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">IBM</text>
+      <circle cx="216.0" cy="282.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="285.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Alphabet</text>
+      <circle cx="194.0" cy="304.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="307.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Apple</text>
+      <circle cx="106.0" cy="304.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="112.0" y="307.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Amazon</text>
+      <circle cx="62.0" cy="414.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="68.0" y="417.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Oracle</text>
+      <circle cx="172.0" cy="370.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="178.0" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">SAP</text>
+      <circle cx="194.0" cy="326.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Salesforce</text>
+      <circle cx="150.0" cy="414.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="417.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">NetSuite</text>
+      <circle cx="128.0" cy="348.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="134.0" y="351.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Adobe</text>
+      <circle cx="172.0" cy="392.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="178.0" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">ServiceNow</text>
+      <circle cx="216.0" cy="348.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="351.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Atlassian</text>
+      <circle cx="150.0" cy="326.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Snowflake</text>
+      <circle cx="194.0" cy="370.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Netflix</text>
+      <circle cx="172.0" cy="304.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="178.0" y="307.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Airbnb</text>
+      <circle cx="216.0" cy="326.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Spotify</text>
+      <circle cx="238.0" cy="238.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="244.0" y="241.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Notion</text>
+    </svg></div>
     </div>
+
     <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Announced firing 5% of "low-performers" in January while doing a hyrox event for content. The midlife crisis didn't even pretend to be subtle.</p>
+      <div class="section-label" style="display: block; font-size: 20px; letter-spacing: 3px; text-align: center; border-bottom: none; padding: 0; margin-bottom: 16px;">Matrix 2 · Cool × Loved</div>
+      <p class="section-body" style="font-size: 16px; color: var(--teal); font-style: italic; text-align: center;">Tesla is the textbook "cool but hated." Apple owns top-right by sheer brand force. Oracle anchors the cursed pit.</p>
+      <div style="margin: 1rem 0; padding: 0 40px;"><svg viewBox="0 0 520 550" role="img" aria-label="Cool × Loved matrix" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;overflow:visible;">
+      <rect x="40" y="40" width="440" height="440" fill="#ffffff" stroke="#1a1410" stroke-width="1.5"/>
+      <line x1="260.0" y1="40" x2="260.0" y2="480" stroke="#1a1410" stroke-width="0.7" stroke-dasharray="4 3"/>
+      <line x1="40" y1="260.0" x2="480" y2="260.0" stroke="#1a1410" stroke-width="0.7" stroke-dasharray="4 3"/>
+      <text x="260.0" y="28" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="middle" letter-spacing="1.5">↑ COOL</text>
+      <text x="260.0" y="502" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="middle" letter-spacing="1.5">↓ CRINGE</text>
+      <text x="32" y="264.0" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="end" letter-spacing="1.5">HATED ←</text>
+      <text x="488" y="264.0" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="start" letter-spacing="1.5">→ LOVED</text>
+      <circle cx="414.0" cy="62.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="420.0" y="65.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Apple</text>
+      <circle cx="392.0" cy="84.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="398.0" y="87.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Nvidia</text>
+      <circle cx="370.0" cy="106.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="376.0" y="109.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Stripe</text>
+      <circle cx="348.0" cy="128.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="354.0" y="131.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Anthropic</text>
+      <circle cx="370.0" cy="172.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="376.0" y="175.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Shopify</text>
+      <circle cx="326.0" cy="150.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="332.0" y="153.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Notion</text>
+      <circle cx="392.0" cy="194.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="398.0" y="197.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Spotify</text>
+      <circle cx="348.0" cy="216.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="354.0" y="219.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Airbnb</text>
+      <circle cx="194.0" cy="106.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="109.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">OpenAI</text>
+      <circle cx="128.0" cy="84.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="134.0" y="87.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Tesla</text>
+      <circle cx="106.0" cy="150.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="112.0" y="153.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Meta</text>
+      <circle cx="62.0" cy="172.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="68.0" y="175.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">X</text>
+      <circle cx="172.0" cy="194.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="178.0" y="197.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Uber</text>
+      <circle cx="326.0" cy="304.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="332.0" y="307.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Microsoft</text>
+      <circle cx="304.0" cy="348.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="310.0" y="351.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Workday</text>
+      <circle cx="348.0" cy="326.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="354.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Netflix</text>
+      <circle cx="128.0" cy="326.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="134.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Amazon</text>
+      <circle cx="194.0" cy="282.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="285.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Alphabet</text>
+      <circle cx="194.0" cy="392.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Salesforce</text>
+      <circle cx="62.0" cy="436.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="68.0" y="439.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Oracle</text>
+      <circle cx="150.0" cy="414.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="417.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">SAP</text>
+      <circle cx="150.0" cy="458.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="461.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">NetSuite</text>
+      <circle cx="216.0" cy="436.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="439.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">IBM</text>
+      <circle cx="106.0" cy="370.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="112.0" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Adobe</text>
+      <circle cx="194.0" cy="436.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="439.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">ServiceNow</text>
+      <circle cx="172.0" cy="392.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="178.0" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Atlassian</text>
+      <circle cx="150.0" cy="370.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Snowflake</text>
+    </svg></div>
     </div>
+
     <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>I'm just optimizing.</li>
-        <li>Brother.</li>
-        <li>It's actually a discipline thing.</li>
-        </ul>
+      <div class="section-label" style="display: block; font-size: 20px; letter-spacing: 3px; text-align: center; border-bottom: none; padding: 0; margin-bottom: 16px;">Matrix 3 · Dateable × Family-approved</div>
+      <p class="section-body" style="font-size: 16px; color: var(--teal); font-style: italic; text-align: center;">Stripe is what your mother actually wants you to marry. Oracle is in jail.</p>
+      <div style="margin: 1rem 0; padding: 0 40px;"><svg viewBox="0 0 520 550" role="img" aria-label="Dateable × Family-approved matrix" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;overflow:visible;">
+      <rect x="40" y="40" width="440" height="440" fill="#ffffff" stroke="#1a1410" stroke-width="1.5"/>
+      <line x1="260.0" y1="40" x2="260.0" y2="480" stroke="#1a1410" stroke-width="0.7" stroke-dasharray="4 3"/>
+      <line x1="40" y1="260.0" x2="480" y2="260.0" stroke="#1a1410" stroke-width="0.7" stroke-dasharray="4 3"/>
+      <text x="260.0" y="28" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="middle" letter-spacing="1.5">↑ WOULD DATE</text>
+      <text x="260.0" y="502" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="middle" letter-spacing="1.5">↓ WOULD NOT DATE</text>
+      <text x="32" y="257" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="end" letter-spacing="1.5"><tspan x="32">FAMILY</tspan><tspan x="32" dy="14">DISAPPROVES ←</tspan></text>
+      <text x="488" y="257" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="start" letter-spacing="1.5"><tspan x="488">→ FAMILY</tspan><tspan x="488" dy="14">APPROVES</tspan></text>
+      <circle cx="436.0" cy="106.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="442.0" y="109.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Stripe</text>
+      <circle cx="392.0" cy="128.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="398.0" y="131.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Anthropic</text>
+      <circle cx="414.0" cy="84.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="420.0" y="87.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Apple</text>
+      <circle cx="370.0" cy="62.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="376.0" y="65.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Nvidia</text>
+      <circle cx="392.0" cy="194.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="398.0" y="197.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Workday</text>
+      <circle cx="414.0" cy="150.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="420.0" y="153.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Shopify</text>
+      <circle cx="348.0" cy="216.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="354.0" y="219.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Microsoft</text>
+      <circle cx="150.0" cy="106.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="109.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Tesla</text>
+      <circle cx="194.0" cy="128.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="131.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">OpenAI</text>
+      <circle cx="106.0" cy="150.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="112.0" y="153.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Meta</text>
+      <circle cx="62.0" cy="172.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="68.0" y="175.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">X</text>
+      <circle cx="216.0" cy="172.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="175.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Spotify</text>
+      <circle cx="194.0" cy="194.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="197.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Airbnb</text>
+      <circle cx="238.0" cy="150.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="244.0" y="153.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Notion</text>
+      <circle cx="348.0" cy="414.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="354.0" y="417.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">IBM</text>
+      <circle cx="326.0" cy="392.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="332.0" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">SAP</text>
+      <circle cx="304.0" cy="436.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="310.0" y="439.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">NetSuite</text>
+      <circle cx="326.0" cy="348.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="332.0" y="351.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Snowflake</text>
+      <circle cx="370.0" cy="392.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="376.0" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">ServiceNow</text>
+      <circle cx="62.0" cy="436.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="68.0" y="439.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Oracle</text>
+      <circle cx="128.0" cy="304.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="134.0" y="307.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Amazon</text>
+      <circle cx="194.0" cy="282.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="285.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Alphabet</text>
+      <circle cx="172.0" cy="326.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="178.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Salesforce</text>
+      <circle cx="106.0" cy="370.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="112.0" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Adobe</text>
+      <circle cx="150.0" cy="414.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="417.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Atlassian</text>
+      <circle cx="216.0" cy="326.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Netflix</text>
+      <circle cx="150.0" cy="304.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="307.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Uber</text>
+    </svg></div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-top: 2rem;">
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-family: Helvetica, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink);">
+        <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #1D9E75; border: 1px solid var(--ink);"></span>Top-right
       </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"Your entire personality is a midlife crisis with a Series A."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Pick a lane: AI or metaverse. The both-and energy is exhausting.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Has a cold plunge in his office bathroom and made it a KPI.</div>
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-family: Helvetica, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink);">
+        <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #D85A30; border: 1px solid var(--ink);"></span>Top-left
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-family: Helvetica, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink);">
+        <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #378ADD; border: 1px solid var(--ink);"></span>Bottom-right
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-family: Helvetica, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink);">
+        <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #5F5E5A; border: 1px solid var(--ink);"></span>Bottom-left
+      </div>
     </div>
   </div>
 </article>
 
 <article class="card" data-index="2" id="card-2">
-  <div class="hero">
-    <img class="hero-img" src="images/amazon-badger.jpg" alt="Honey badger representing Amazon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(amazon-badger.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Amazon</div>
-      <div class="animal-tag">Honey badger · Gen X</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">A spreadsheet that became sentient, got an MBA, and now manages 80,000 people.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Patagonia vest over wrinkled blue button-down, Allbirds, Apple Watch on the tightest setting</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Black coffee, venti, "I'm on a deadline" — he is never not on a deadline</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Low. Two-day shipping is the only reason you tolerate him at family events.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Stagnant + sketchy</span>
-      <span class="tag tag-2">Cringe + hated</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Schedules 6 AM standups "just to align" and calls it culture. Owns half the internet (AWS), all your packages, your doorbell, your smart speaker, and recently asked your Alexa what your kids think of him.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Tracks "time off task" and has been cited for bathroom-break issues. Treats throughput as the only metric worth measuring.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Bias for action.</li>
-        <li>Are you a builder?</li>
-        <li>Let's take this offline.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You built an empire and your employees pee in bottles to keep it running."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Let warehouse workers go to the bathroom. Wild concept.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Refers to his children as "deliverables."</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="3" id="card-3">
-  <div class="hero">
-    <img class="hero-img" src="images/alphabet-octopus.jpg" alt="Octopus representing Alphabet" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(alphabet-octopus.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Alphabet</div>
-      <div class="animal-tag">Octopus · Elder millennial</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">The gifted kid who peaked in 2012 and won't stop bringing it up.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Heather gray Allbirds, dad jeans, fleece with a defunct internal product on it (RIP Reader, Wave, Stadia, Glass, Plus)</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Cold brew, oat milk, "is this fair trade?"</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Faded. Still owns YouTube, Android, and search, which is like still owning Manhattan and crying about it.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Stagnant + sketchy</span>
-      <span class="tag tag-2">Cringe + hated</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Was inventing Maps and self-driving cars while you were in middle school. Then ChatGPT happened and he had a midlife crisis loud enough to hear through the walls.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Sergey Brin told Gemini employees to be in the office every weekday clocking 60-hour weeks. That's the panic talking.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Moonshot.</li>
-        <li>We're betting big on AI.</li>
-        <li>Have you tried it in Incognito?</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You invented the transformer and let a startup steal your lunch with it."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Commit to a product for longer than 18 months. Just once.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Starts five new hobbies a quarter and abandons four by Q3.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="4" id="card-4">
-  <div class="hero">
-    <img class="hero-img" src="images/oracle-crocodile.jpg" alt="Saltwater crocodile representing Oracle" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(oracle-crocodile.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Oracle</div>
-      <div class="animal-tag">Saltwater crocodile · Silent generation</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">What if a Bond villain decided databases were more profitable than nuclear submarines?</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Open-collar Brioni, gold watch, deck shoes — came from the boat</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Macallan 25, neat, "and one for my litigator"</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Zero. But the yacht is incredible.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Stagnant + sketchy</span>
-      <span class="tag tag-2">Cringe + hated</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Sues for sport. Owns an island. Donated a building to himself. The revenue model is "license you something, then audit you for using it the way you thought you were allowed to."</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Customer experience around implementation and support receives mixed reviews — enterprise software for "we have you in a chokehold and you knew the terms."</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>We'll see you in court.</li>
-        <li>Cloud-first.</li>
-        <li>Java was always ours.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"Your business model is hostage negotiation with extra steps."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Stop the licensing audits. Make money the normal way.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">His yacht has a smaller yacht inside it.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="5" id="card-5">
-  <div class="hero">
-    <img class="hero-img" src="images/apple-peacock.jpg" alt="White peacock representing Apple" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(apple-peacock.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Apple</div>
-      <div class="animal-tag">White peacock · Gen X</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">Minimalist influencer who is better than you and doesn't have to say it.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Off-white merino, raw denim, Margiela sneakers that look like socks, a single perfect leather watch strap</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Sparkling water. Specific brand. "They don't carry it here? That's fine." (It is not fine.)</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Untouchable. Annoyingly so.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Stagnant + sketchy</span>
-      <span class="tag tag-2">Cool + loved</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Lives in a 4,000 sqft loft with one Eames chair and a single ceramic bowl. Removed the headphone jack and made you applaud. Sells $19 cleaning cloths.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">The Vision Pro was the most expensive way ever invented to look stupid in your living room, and people bought it. Hardware is the best on Earth, which is what gives them the moral authority to charge $999 for a monitor stand.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>It just works.</li>
-        <li>Courage.</li>
-        <li>We think you're going to love it.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You haven't had an original idea since Steve died and the whole world is just pretending."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Open the App Store. Developers are not your tenants.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Refers to the home button in the past tense, sadly, like an ex.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="6" id="card-6">
-  <div class="hero">
-    <img class="hero-img" src="images/microsoft-elephant.jpg" alt="African elephant representing Microsoft" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(microsoft-elephant.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Microsoft</div>
-      <div class="animal-tag">African elephant · Gen X</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">Reformed 90s bully who got therapy and now quietly owns everything.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Soft black crewneck, charcoal trousers, leather loafers, glasses he definitely needs</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Masala chai, "but the coffee's fine if that's easier"</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Higher than it should be. Teams is a war crime, Excel is a religion, Copilot is the only AI feature your boss has heard of.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Stagnant + ethical</span>
-      <span class="tag tag-2">Cringe + loved</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Said "growth mindset" out loud without flinching, then bought GitHub, LinkedIn, Activision, Minecraft, and half of OpenAI while everyone was admiring the glow-up.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Champions hybrid work that actually works. Though an employee noted that "firmer performance expectations" are creeping in now too. The bully has relapses.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Empathy.</li>
-        <li>Learn it all, not know it all.</li>
-        <li>What if we partnered?</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You bought your way out of irrelevance and called it strategy."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Fix Teams. Or burn it down. Either works.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Already owns your company. You just don't know yet.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="7" id="card-7">
-  <div class="hero">
-    <img class="hero-img" src="images/netsuite-opossum.jpg" alt="Virginia opossum representing NetSuite" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(netsuite-opossum.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">NetSuite</div>
-      <div class="animal-tag">Virginia opossum · Boomer</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">Oracle's stepkid that nobody remembers at family dinner.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Short-sleeve dress shirt, khakis, lanyard with three expired badges</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Whatever the conference room had. "Regular or decaf?"</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">None. Logo is still that exact shade of 2003 blue.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Stagnant + sketchy</span>
-      <span class="tag tag-2">Cringe + hated</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Got adopted by Larry in 2016 and has been at the kids' table ever since. Sells "real ERP" to Series B startups that graduated from QuickBooks and can't afford SAP.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Like an off-brand suit you wear to your first big job interview. Will absolutely show up to the family reunion and nobody can quite remember what he does.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>It scales with you.</li>
-        <li>We're cloud-native.</li>
-        <li>(He is debatably not.)</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You're what happens when QuickBooks gets ideas above its station."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Update the UI to a year that ends in 2.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Tells people he works at Oracle.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="8" id="card-8">
-  <div class="hero">
-    <img class="hero-img" src="images/sap-shepherd.jpg" alt="German shepherd representing SAP" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(sap-shepherd.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">SAP</div>
-      <div class="animal-tag">German shepherd · Boomer</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">The German engineer with strong opinions about process.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Crisp white shirt, no tie, pressed slacks, leather lace-ups, a Mont Blanc clipped inside the pocket</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">One Riesling at 6:47 PM exactly. One. Then water.</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Negative. But efficient.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Stagnant + sketchy</span>
-      <span class="tag tag-2">Cringe + hated</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Does not bring snacks. Does not approve of snacks. ABAP exists exclusively to make grown developers weep into their Spezi. The S/4HANA migration has been "almost done" since 2017.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">And yet — SAP remains the fastest-growing enterprise apps player by far, outpacing Oracle and Salesforce by more than 100%. The Germans, as always, are quietly winning.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Per the methodology.</li>
-        <li>We have a SAP-approved partner for this.</li>
-        <li>Please refer to slide 47.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You charge millions for software that looks like Windows 95 reported to HR."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Retire ABAP. Apologize to every developer alive.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Has binders. Plural. Color-coded by fiscal year.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="9" id="card-9">
-  <div class="hero">
-    <img class="hero-img" src="images/workday-retriever.jpg" alt="Golden retriever representing Workday" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(workday-retriever.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Workday</div>
-      <div class="animal-tag">Golden retriever · Elder millennial</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">The HR director who's actually cool — runs marathons, knows your name.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Lululemon Define jacket, dark wash jeans, gold Mejuri stack, AirPods Max around the neck</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Matcha latte with oat milk, and a sparkling water with lime, "thank you so much!"</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">The acceptable face of enterprise software.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Innovative + ethical</span>
-      <span class="tag tag-2">Cringe + loved</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Escaped from Oracle in 2005 to start the nicer version. Brings homemade lemon scones to the all-hands.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Widely viewed as the leader in modern HCM with a user-friendly interface — premium pricing, but everything else looks like Windows XP next to her.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Let's circle back.</li>
-        <li>Just to put a pin in it.</li>
-        <li>Be well!</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You're the only software that bills like a divorce attorney and smiles while doing it."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Cut implementation cost by half. Stop charging like a wedding.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Implementation costs more than your house.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="10" id="card-10">
-  <div class="hero">
-    <img class="hero-img" src="images/salesforce-peacock.jpg" alt="Indian peacock representing Salesforce" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(salesforce-peacock.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Salesforce</div>
-      <div class="animal-tag">Indian peacock · Boomer</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">Wellness bro selling you a CRM and a crystal.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Aloha shirt, jeans, Hokas, mala beads, statement turquoise ring</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Green juice "with the adaptogens." Also kombucha. Sometimes both.</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Cringe-cool. Trailhead is unironically fun. The mascot is a raccoon named Astro.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Stagnant + sketchy</span>
-      <span class="tag tag-2">Cringe + hated</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Has a Buddhist monk, a redwood tree, and an "ohana wall" in the office at the same time. Brought the Dalai Lama to Dreamforce one year and Metallica another.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Bought Slack ($28B), Tableau ($15.7B), MuleSoft ($6.5B) and dragged them all into the Trailblazer Cinematic Universe. The product is a CRM that ate every adjacent category.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Ohana.</li>
-        <li>We're a values-led company.</li>
-        <li>Have you met our Chief Trust Officer?</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You bought a magazine to make yourself feel important. It didn't work."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Drop one Cloud. Any of them. Just one.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Owns Time Magazine. As in, the magazine.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="11" id="card-11">
-  <div class="hero">
-    <img class="hero-img" src="images/ibm-tortoise.jpg" alt="Galápagos tortoise representing IBM" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(ibm-tortoise.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">IBM</div>
-      <div class="animal-tag">Galápagos tortoise · Silent generation</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">Your grandfather who was a big deal once.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Charcoal three-piece suit, navy tie, French cuffs, polished oxfords, pocket square</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Old Fashioned. Bourbon, not rye. The bartender already knows.</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Zero, but historically significant.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Stagnant + ethical</span>
-      <span class="tag tag-2">Cringe + hated</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Pre-existed two world wars. Invented the hard drive, the barcode, the credit card stripe.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Watson did not cure cancer despite the commercials. Bought Red Hat for $34B and HashiCorp for $6.4B hoping young people might think he's cool by association. They don't.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>When I was at Endicott…</li>
-        <li>Hybrid cloud.</li>
-        <li>We've been doing AI since 1956.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You invented the future and then spent 60 years subcontracting it back."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Stop pretending Watson is current. Lead with quantum.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Still refers to laptops as "ThinkPads" in casual conversation.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="12" id="card-12">
   <div class="hero">
     <img class="hero-img" src="images/adobe-cat.jpg" alt="Persian cat representing Adobe" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
     <div class="hero-placeholder" style="display:none;">
@@ -1595,391 +1047,7 @@
   </div>
 </article>
 
-<article class="card" data-index="13" id="card-13">
-  <div class="hero">
-    <img class="hero-img" src="images/tesla-cheetah.jpg" alt="Cheetah representing Tesla" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(tesla-cheetah.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Tesla</div>
-      <div class="animal-tag">Cheetah · Younger millennial</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">The charismatic founder whose personal brand IS the stock price.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Black tee, jeans, sometimes a leather jacket, sometimes a cape (literal, at events)</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Red Bull and Ambien, allegedly, per court filings</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Plummeting in real time. Stock price defies gravity, physics, and SEC filings simultaneously.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Innovative + sketchy</span>
-      <span class="tag tag-2">Cool + hated</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Cars are genuinely innovative. Build quality varies by which way the wind was blowing at Fremont that morning.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Cybertruck looks like it was designed in DOS and yet people pay extra for it. "Full self-driving next year" — every year, since 2016.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Next year.</li>
-        <li>Robotaxi soon.</li>
-        <li>Production hell.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You're a car company priced like a religion."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Separate the company from the CEO's social media.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Posts at 3 AM. About you. Maybe.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="14" id="card-14">
-  <div class="hero">
-    <img class="hero-img" src="images/nvidia-wolf.jpg" alt="Gray wolf representing Nvidia" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(nvidia-wolf.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Nvidia</div>
-      <div class="animal-tag">Gray wolf · Gen X</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">The quiet kid who sold pickaxes in the gold rush and now owns the mountain.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Black leather jacket. Always. The jacket has its own Wikipedia page in spirit.</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Whatever's on the table — doesn't notice, already thinking about the next thing</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Currently maximum. Every AI startup is paying him rent and pretending they aren't.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Innovative + sketchy</span>
-      <span class="tag tag-2">Cool + loved</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Spent 30 years making graphics cards for nerds, woke up one Tuesday as the most valuable company on Earth.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">The whole AI economy collapses if he sneezes. One bad quarter from any of his three biggest customers and the stock chart looks like a black diamond run.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Accelerated computing.</li>
-        <li>The more you buy, the more you save.</li>
-        <li>We are the platform.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"Your entire valuation rests on three customers and a vibe."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Diversify the customer base. Right now, one bad AI quarter ends you.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">The whole AI economy collapses if he sneezes.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="15" id="card-15">
-  <div class="hero">
-    <img class="hero-img" src="images/netflix-cat.jpg" alt="House cat representing Netflix" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(netflix-cat.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Netflix</div>
-      <div class="animal-tag">House cat · Elder millennial</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">The cool older sibling who got lazy and started phoning it in.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Vintage tee, joggers, slides with socks, looks expensive but isn't trying</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Natural wine, "I've been getting into orange wines actually"</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Faded. Even the guy who coined FAANG suggested replacing Netflix with Microsoft — that's a demotion.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Stagnant + sketchy</span>
-      <span class="tag tag-2">Cringe + loved</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Killed Blockbuster, invented streaming, made prestige TV, now the algorithm thinks you want Love is Blind: Estonia.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Cancels your favorite show after one season, greenlights a sixth season of one you forgot existed.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>It's a limited series.</li>
-        <li>(It is not.)</li>
-        <li>Are you still watching?</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You killed cable to become worse cable with a password crackdown."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Let a show run more than two seasons before canceling it.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Three separate password-sharing crackdown emails this quarter.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="16" id="card-16">
-  <div class="hero">
-    <img class="hero-img" src="images/x-vulture.jpg" alt="Turkey vulture representing X" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(x-vulture.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">X</div>
-      <div class="animal-tag">Turkey vulture · Gen Alpha</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">The friend going through a very public rough divorce.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Sometimes a suit, sometimes a costume, occasionally a t-shirt that says something concerning</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Whatever's been left on the bar, possibly someone else's</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Negative. Aggressively so.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Innovative + sketchy</span>
-      <span class="tag tag-2">Cool + hated</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Used to be the smartest, funniest one in the room. Now you can't look away but feel bad about it.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Gutted 6,000+ staff after acquisition. "Ruling with fear over incentives" became a poster-child management style.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Free speech.</li>
-        <li>Legacy media is lying.</li>
-        <li>The algorithm changed.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You paid $44 billion to ruin a website that was already free."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">A CEO whose entire personality isn't the timeline.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">The blue check is now a red flag.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="17" id="card-17">
-  <div class="hero">
-    <img class="hero-img" src="images/openai-octopus.jpg" alt="Mimic octopus representing OpenAI" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(openai-octopus.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">OpenAI</div>
-      <div class="animal-tag">Mimic octopus · Gen Z</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">The hot startup protagonist with a tragic backstory and a coup subplot.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Patagonia vest, but ironically. Or sincerely. Unclear.</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Soylent. Then a $19 cocktail at a SoMa bar.</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">The main character of every dinner conversation in 2026.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Innovative + sketchy</span>
-      <span class="tag tag-2">Cool + hated</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Started as a nonprofit, became the most valuable startup on Earth, fired the CEO on a Friday, rehired him by Wednesday.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Sells AI to everyone, including their own biggest investor Microsoft. The board has a group chat and you're not in it.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>AGI is coming.</li>
-        <li>Safety is our top priority.</li>
-        <li>We're a research lab. (We are not.)</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You started a nonprofit to save humanity and ended up a $300B IP lawsuit."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Pick a corporate structure. Stick to it for one fiscal year.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">The board has a group chat and you're not in it.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="18" id="card-18">
-  <div class="hero">
-    <img class="hero-img" src="images/uber-hyena.jpg" alt="Spotted hyena representing Uber" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(uber-hyena.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Uber</div>
-      <div class="animal-tag">Spotted hyena · Elder millennial</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">The frat bro who took one ethics class and called it a personality.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Vuori joggers, Lululemon ABC pants for "meetings," Yeezys, Whoop band on the wrist</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Athletic Greens in the morning, mezcal old fashioned at night, "I'm cutting back"</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Was once dangerous. Now corporate-cool, which is its own thing.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Innovative + sketchy</span>
-      <span class="tag tag-2">Cringe + hated</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Used to break the law on principle. Now talks about "operational discipline" and goes to bed at 9:30.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Owns the road, the food, the freight, and a quiet stake in your weekend plans. Eats Postmates because he owns Postmates.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Earner experience.</li>
-        <li>We're a platform, not an employer.</li>
-        <li>(Court disagrees.)</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You're a taxi company that lost money for a decade and called it disruption."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Pay drivers like employees. The math still works.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Surge pricing during a hurricane is a "market signal."</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="19" id="card-19">
+<article class="card" data-index="3" id="card-3">
   <div class="hero">
     <img class="hero-img" src="images/airbnb-cuckoo.jpg" alt="Common cuckoo representing Airbnb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
     <div class="hero-placeholder" style="display:none;">
@@ -2043,95 +1111,31 @@
   </div>
 </article>
 
-<article class="card" data-index="20" id="card-20">
+<article class="card" data-index="4" id="card-4">
   <div class="hero">
-    <img class="hero-img" src="images/spotify-magpie.jpg" alt="Eurasian magpie representing Spotify" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <img class="hero-img" src="images/alphabet-raven.jpg" alt="Octopus representing Alphabet" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
     <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(spotify-magpie.jpg)</small>
+      Place generated photo here<br/><small style="opacity:0.6;">(alphabet-octopus.jpg)</small>
     </div>
     <div class="name-banner">
-      <div class="company-name">Spotify</div>
-      <div class="animal-tag">Eurasian magpie · Younger millennial</div>
+      <div class="company-name">Alphabet</div>
+      <div class="animal-tag">Raven · Elder millennial</div>
     </div>
   </div>
   <div class="body-content">
-    <p class="archetype">The indie kid who used to make mixtapes and now drives a Porsche.</p>
+    <p class="archetype">The gifted kid who peaked in 2012 and won't stop bringing it up.</p>
     <div class="meta-row">
       <div class="meta-item">
         <div class="meta-label">Outfit</div>
-        <div class="meta-value">A&F tee re-worn ironically, Acne jeans, vintage New Balance, AirPods Pro permanently in</div>
+        <div class="meta-value">Heather gray Allbirds, dad jeans, fleece with a defunct internal product on it (RIP Reader, Wave, Stadia, Glass, Plus)</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Drink order</div>
-        <div class="meta-value">Cortado, then a natural wine, then "honestly just a beer"</div>
+        <div class="meta-value">Cold brew, oat milk, "is this fair trade?"</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Faded. AI-generated artists keep showing up in your Discover Weekly and you can't unsee it.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Stagnant + sketchy</span>
-      <span class="tag tag-2">Cool + loved</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Knew about the band before you did. Now algorithmically tells you about a different one and pays them $0.003 per stream.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Wrapped is the best marketing campaign of the decade. The artists hosting it are eating ramen.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Music for every moment.</li>
-        <li>Discovery.</li>
-        <li>Wrapped is here!</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You pay artists $0.003 a stream and spent $200M on one podcaster."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Pay artists a living wage. Or at least a noticeable one.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Your favorite podcast is now an exclusive and you have to switch apps to listen to it.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="21" id="card-21">
-  <div class="hero">
-    <img class="hero-img" src="images/atlassian-wombat.jpg" alt="Common wombat representing Atlassian" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(atlassian-wombat.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Atlassian</div>
-      <div class="animal-tag">Common wombat · Gen X</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">Australian middle manager you keep confusing with the other Australian middle manager.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Untucked Bonobos shirt, chinos, brown leather Cole Haans, lanyard with three offsite badges</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Long black in the morning, a single craft IPA at the airport bar at 4 PM</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Anti-cool. Aggressively so. The mascot energy is strong.</div>
+        <div class="meta-value">Faded. Still owns YouTube, Android, and search, which is like still owning Manhattan and crying about it.</div>
       </div>
     </div>
     <div class="tags">
@@ -2140,62 +1144,62 @@
     </div>
     <div class="section">
       <div class="section-label">The energy</div>
-      <p class="section-body">Owns Jira, Confluence, Trello, Bitbucket, and your sprint retro. Every engineer hates him and uses him eight hours a day.</p>
+      <p class="section-body">Was inventing Maps and self-driving cars while you were in middle school. Then ChatGPT happened and he had a midlife crisis loud enough to hear through the walls.</p>
     </div>
     <div class="section">
       <div class="section-label">The tell</div>
-      <p class="section-body">Jira tickets that take longer to write than the work itself. The board has 247 columns and nobody knows which one is "in progress."</p>
+      <p class="section-body">Sergey Brin told Gemini employees to be in the office every weekday clocking 60-hour weeks. That's the panic talking.</p>
     </div>
     <div class="section">
       <div class="section-label">Things they say constantly</div>
       <div class="quotes">
         <ul class="quotes-list">
-        <li>Unleash the potential of every team.</li>
-        <li>Have you tagged it in the epic?</li>
-        <li>Quick question — can you add this to the backlog?</li>
+        <li>Moonshot.</li>
+        <li>We're betting big on AI.</li>
+        <li>Have you tried it in Incognito?</li>
         </ul>
       </div>
     </div>
     <div class="burn">
       <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"Jira is the punishment management gives itself for being management."</p>
+      <p class="burn-quote">"You invented the transformer and let a startup steal your lunch with it."</p>
     </div>
     <div class="glow">
       <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Make Jira fast. Even a little. We'd notice.</p>
+      <p class="glow-text">Commit to a product for longer than 18 months. Just once.</p>
     </div>
     <div class="red-flag">
       <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">"Quick question — can you add this to the backlog?"</div>
+      <div class="red-flag-text">Starts five new hobbies a quarter and abandons four by Q3.</div>
     </div>
   </div>
 </article>
 
-<article class="card" data-index="22" id="card-22">
+<article class="card" data-index="5" id="card-5">
   <div class="hero">
-    <img class="hero-img" src="images/servicenow-mole.jpg" alt="European mole representing ServiceNow" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <img class="hero-img" src="images/amazon-badger.jpg" alt="Honey badger representing Amazon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
     <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(servicenow-mole.jpg)</small>
+      Place generated photo here<br/><small style="opacity:0.6;">(amazon-badger.jpg)</small>
     </div>
     <div class="name-banner">
-      <div class="company-name">ServiceNow</div>
-      <div class="animal-tag">European mole · Boomer</div>
+      <div class="company-name">Amazon</div>
+      <div class="animal-tag">Honey badger · Gen X</div>
     </div>
   </div>
   <div class="body-content">
-    <p class="archetype">The IT helpdesk guy who somehow became a $200B company while nobody was looking.</p>
+    <p class="archetype">A spreadsheet that became sentient, got an MBA, and now manages 80,000 people.</p>
     <div class="meta-row">
       <div class="meta-item">
         <div class="meta-label">Outfit</div>
-        <div class="meta-value">Untucked plaid button-down, Costco jeans, sensible sneakers, badge clip from 2014</div>
+        <div class="meta-value">Patagonia vest over wrinkled blue button-down, Allbirds, Apple Watch on the tightest setting</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Drink order</div>
-        <div class="meta-value">Diet Coke. Multiple. Throughout the day. Possibly with lunch.</div>
+        <div class="meta-value">Black coffee, venti, "I'm on a deadline" — he is never not on a deadline</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Invisible. Which is, financially, the move.</div>
+        <div class="meta-value">Low. Two-day shipping is the only reason you tolerate him at family events.</div>
       </div>
     </div>
     <div class="tags">
@@ -2204,294 +1208,38 @@
     </div>
     <div class="section">
       <div class="section-label">The energy</div>
-      <p class="section-body">You opened a ticket in 2019. He has not closed it. He has, however, added 14 stakeholders and a workflow.</p>
+      <p class="section-body">Schedules 6 AM standups "just to align" and calls it culture. Owns half the internet (AWS), all your packages, your doorbell, your smart speaker, and recently asked your Alexa what your kids think of him.</p>
     </div>
     <div class="section">
       <div class="section-label">The tell</div>
-      <p class="section-body">Nobody outside enterprise IT has heard of him. He is worth more than Adobe. Let that sit.</p>
+      <p class="section-body">Tracks "time off task" and has been cited for bathroom-break issues. Treats throughput as the only metric worth measuring.</p>
     </div>
     <div class="section">
       <div class="section-label">Things they say constantly</div>
       <div class="quotes">
         <ul class="quotes-list">
-        <li>The platform of platforms.</li>
-        <li>Workflow automation.</li>
-        <li>Have you opened a ticket?</li>
+        <li>Bias for action.</li>
+        <li>Are you a builder?</li>
+        <li>Let's take this offline.</li>
         </ul>
       </div>
     </div>
     <div class="burn">
       <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"Nobody outside IT can name a single thing you do, and you charge them $4M a year for it."</p>
+      <p class="burn-quote">"You built an empire and your employees pee in bottles to keep it running."</p>
     </div>
     <div class="glow">
       <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Build something a regular human could explain.</p>
+      <p class="glow-text">Let warehouse workers go to the bathroom. Wild concept.</p>
     </div>
     <div class="red-flag">
       <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Your "AI agent" pilot somehow costs $4M a year and nobody can explain what it does.</div>
+      <div class="red-flag-text">Refers to his children as "deliverables."</div>
     </div>
   </div>
 </article>
 
-<article class="card" data-index="23" id="card-23">
-  <div class="hero">
-    <img class="hero-img" src="images/stripe-collie.jpg" alt="Border collie representing Stripe" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(stripe-collie.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Stripe</div>
-      <div class="animal-tag">Border collie · Younger millennial</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">The polite Irish twins who quietly run the internet's checkout.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Uniqlo cashmere crewneck, dark APC jeans, Common Projects, no logos anywhere</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Flat white. One. Doesn't make a thing of it.</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Maximum quiet-cool. The Phoebe Philo of fintech.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Innovative + ethical</span>
-      <span class="tag tag-2">Cool + loved</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Doesn't post. Doesn't tweet. Just processes 1% of global GDP and goes home to read.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">The docs are so good developers cry. The company is privately valued at $90B and barely has a marketing department.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Increase the GDP of the internet.</li>
-        <li>(Yes. Sincerely.)</li>
-        <li>Let's not announce that.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You're so afraid to IPO your employees have founded second companies waiting for it."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Go public already. We've waited a decade.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Will be public someday. The IPO will be the only thing he ever says loudly.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="24" id="card-24">
-  <div class="hero">
-    <img class="hero-img" src="images/shopify-beaver.jpg" alt="North American beaver representing Shopify" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(shopify-beaver.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Shopify</div>
-      <div class="animal-tag">North American beaver · Younger millennial</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">The Canadian guy who really wants you to start a business.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Patagonia Better Sweater, Lululemon ABC pants, a beanie indoors, AirPods Pro</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Cold brew with MCT oil, "I do one meal a day, eh"</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Wholesome-cool. The opposite of Bezos energy.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Innovative + ethical</span>
-      <span class="tag tag-2">Cool + loved</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Sincerely believes "entrepreneurship is the answer." Will sell you a course about it. Then a Shopify subscription. Then an app from the Shopify App Store.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">Half of Instagram is running on him and the merchants don't even know it.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Arming the rebels.</li>
-        <li>Make commerce better for everyone.</li>
-        <li>Have you tried our new app store?</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You're an AliExpress reseller pipeline wearing a 'small business' t-shirt."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Vet the dropshippers. The app store is a flea market.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Tobi has a sword in his office. Not metaphorical. An actual sword.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="25" id="card-25">
-  <div class="hero">
-    <img class="hero-img" src="images/snowflake-bear.jpg" alt="Polar bear representing Snowflake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(snowflake-bear.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Snowflake</div>
-      <div class="animal-tag">Polar bear · Gen X</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">The data warehouse with a price tag that gives CFOs night sweats.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Navy quarter-zip, gray slacks, AirPods, badge from a Gartner conference</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Black coffee, "make it a double, I have a board meeting"</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Engineer-cool, finance-cursed.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Stagnant + sketchy</span>
-      <span class="tag tag-2">Cringe + hated</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Quietly the most expensive thing on your stack. You query a table. A credit dies. You query it again. Another credit dies.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">The bill arrives. The CFO opens it. The CFO closes it. The CFO opens it again. The number has not changed.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Data cloud.</li>
-        <li>Consumption-based pricing.</li>
-        <li>It's only $40K a month.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You're a database that charges by the query like it's a 1-900 number."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Predictable pricing. The credits system is a trauma response.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">"It's only $40K a month" — first month.</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="26" id="card-26">
-  <div class="hero">
-    <img class="hero-img" src="images/notion-raccoon.jpg" alt="Raccoon representing Notion" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="hero-placeholder" style="display:none;">
-      Place generated photo here<br/><small style="opacity:0.6;">(notion-raccoon.jpg)</small>
-    </div>
-    <div class="name-banner">
-      <div class="company-name">Notion</div>
-      <div class="animal-tag">Raccoon · Gen Z</div>
-    </div>
-  </div>
-  <div class="body-content">
-    <p class="archetype">Design school dropout who built a productivity app and accidentally a cult.</p>
-    <div class="meta-row">
-      <div class="meta-item">
-        <div class="meta-label">Outfit</div>
-        <div class="meta-value">Linen shirt, Uniqlo wide-legs, Birkenstock Bostons, tortoiseshell glasses, one (1) ring</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Drink order</div>
-        <div class="meta-value">Hojicha latte, oat milk, "have you tried it?"</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Cool factor</div>
-        <div class="meta-value">Aesthetic-cool, productivity-questionable.</div>
-      </div>
-    </div>
-    <div class="tags">
-      <span class="tag tag-1">Stagnant + sketchy</span>
-      <span class="tag tag-2">Cool + loved</span>
-    </div>
-    <div class="section">
-      <div class="section-label">The energy</div>
-      <p class="section-body">Has 14 different "second brain" templates. Has used none of them past day three. Built a personal wiki for a life he isn't living.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">The tell</div>
-      <p class="section-body">The app is gorgeous and slow. Every page is a database that's a page that's a database. You will spend 40 minutes building a habit tracker and never track a habit.</p>
-    </div>
-    <div class="section">
-      <div class="section-label">Things they say constantly</div>
-      <div class="quotes">
-        <ul class="quotes-list">
-        <li>Your all-in-one workspace.</li>
-        <li>It's so customizable.</li>
-        <li>Have you seen my template?</li>
-        </ul>
-      </div>
-    </div>
-    <div class="burn">
-      <div class="burn-label">★ The burn ★</div>
-      <p class="burn-quote">"You convinced an entire generation that procrastination is a productivity system."</p>
-    </div>
-    <div class="glow">
-      <div class="glow-label">↗ Glow-up move</div>
-      <p class="glow-text">Make it fast. Pages shouldn't load like dial-up.</p>
-    </div>
-    <div class="red-flag">
-      <span class="red-flag-icon">Red flag</span>
-      <div class="red-flag-text">Just bought a $500 stationery set "to think on paper instead."</div>
-    </div>
-  </div>
-</article>
-
-<article class="card" data-index="27" id="card-27">
+<article class="card" data-index="6" id="card-6">
   <div class="hero">
     <img class="hero-img" src="images/anthropic-owl.jpg" alt="Great horned owl representing Anthropic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
     <div class="hero-placeholder" style="display:none;">
@@ -2555,160 +1303,1413 @@
   </div>
 </article>
 
-<article class="card" data-index="28" id="card-28">
-  <div class="hero" style="aspect-ratio: 16 / 6;">
-    <div class="hero-placeholder" style="display: flex; flex-direction: column; gap: 8px; color: var(--yellow);">
-      <div style="font-family: 'Helvetica Neue', Arial Black, sans-serif; font-size: 22px; font-weight: 900; letter-spacing: 0.15em;">THE BIG PICTURE</div>
-      <div style="font-size: 11px; letter-spacing: 0.25em; color: var(--pale-blue);">All 27 specimens · plotted</div>
+<article class="card" data-index="7" id="card-7">
+  <div class="hero">
+    <img class="hero-img" src="images/apple-peacock.jpg" alt="White peacock representing Apple" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(apple-peacock.jpg)</small>
     </div>
     <div class="name-banner">
-      <div class="company-name" style="font-size: 36px;">Summary</div>
-      <div class="animal-tag">The whole field</div>
+      <div class="company-name">Apple</div>
+      <div class="animal-tag">White peacock · Gen X</div>
     </div>
   </div>
   <div class="body-content">
-    <p class="archetype">Every company we've audited, plotted on the three matrices side by side. Patterns emerge.</p>
-
-    <div class="section">
-      <div class="section-label">Matrix 1 · Innovation × Ethics</div>
-      <div style="margin: 1rem 0;"><svg viewBox="0 0 520 550" role="img" aria-label="Innovation × Ethics matrix" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-      <rect x="40" y="40" width="440" height="440" fill="#ffffff" stroke="#1a1410" stroke-width="1.5"/>
-      <line x1="260.0" y1="40" x2="260.0" y2="480" stroke="#1a1410" stroke-width="0.7" stroke-dasharray="4 3"/>
-      <line x1="40" y1="260.0" x2="480" y2="260.0" stroke="#1a1410" stroke-width="0.7" stroke-dasharray="4 3"/>
-      <text x="260.0" y="28" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="middle" letter-spacing="1.5">↑ INNOVATIVE</text>
-      <text x="260.0" y="502" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="middle" letter-spacing="1.5">↓ STAGNANT</text>
-      <text x="32" y="264.0" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="end" letter-spacing="1.5">SKETCHY ←</text>
-      <text x="488" y="264.0" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="start" letter-spacing="1.5">→ ETHICAL</text>
-      <circle cx="414.0" cy="84.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="420.0" y="87.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Anthropic</text>
-      <circle cx="436.0" cy="106.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="442.0" y="109.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Stripe</text>
-      <circle cx="392.0" cy="150.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="398.0" y="153.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Shopify</text>
-      <circle cx="326.0" cy="172.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="332.0" y="175.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Workday</text>
-      <circle cx="216.0" cy="62.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="65.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Nvidia</text>
-      <circle cx="194.0" cy="84.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="87.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">OpenAI</text>
-      <circle cx="106.0" cy="128.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="112.0" y="131.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Meta</text>
-      <circle cx="128.0" cy="106.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="134.0" y="109.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Tesla</text>
-      <circle cx="150.0" cy="172.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="175.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Uber</text>
-      <circle cx="62.0" cy="194.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="68.0" y="197.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">X</text>
-      <circle cx="304.0" cy="282.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="310.0" y="285.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Microsoft</text>
-      <circle cx="326.0" cy="392.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="332.0" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">IBM</text>
-      <circle cx="216.0" cy="282.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="285.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Alphabet</text>
-      <circle cx="194.0" cy="304.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="307.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Apple</text>
-      <circle cx="106.0" cy="304.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="112.0" y="307.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Amazon</text>
-      <circle cx="62.0" cy="414.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="68.0" y="417.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Oracle</text>
-      <circle cx="172.0" cy="370.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="178.0" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">SAP</text>
-      <circle cx="194.0" cy="326.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Salesforce</text>
-      <circle cx="150.0" cy="414.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="417.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">NetSuite</text>
-      <circle cx="128.0" cy="348.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="134.0" y="351.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Adobe</text>
-      <circle cx="172.0" cy="392.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="178.0" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">ServiceNow</text>
-      <circle cx="216.0" cy="348.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="351.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Atlassian</text>
-      <circle cx="150.0" cy="326.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Snowflake</text>
-      <circle cx="194.0" cy="370.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Netflix</text>
-      <circle cx="172.0" cy="304.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="178.0" y="307.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Airbnb</text>
-      <circle cx="216.0" cy="326.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Spotify</text>
-      <circle cx="238.0" cy="238.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="244.0" y="241.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Notion</text>
-    </svg></div>
-      <p class="section-body" style="font-size: 13px; color: var(--teal); font-style: italic;">The top-right quadrant is the small, virtuous corner. The bottom-left is where most of enterprise software lives.</p>
+    <p class="archetype">Minimalist influencer who is better than you and doesn't have to say it.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Off-white merino, raw denim, Margiela sneakers that look like socks, a single perfect leather watch strap</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Sparkling water. Specific brand. "They don't carry it here? That's fine." (It is not fine.)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Untouchable. Annoyingly so.</div>
+      </div>
     </div>
-
-    <div class="section">
-      <div class="section-label">Matrix 2 · Cool × Loved</div>
-      <div style="margin: 1rem 0;"><svg viewBox="0 0 520 550" role="img" aria-label="Cool × Loved matrix" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-      <rect x="40" y="40" width="440" height="440" fill="#ffffff" stroke="#1a1410" stroke-width="1.5"/>
-      <line x1="260.0" y1="40" x2="260.0" y2="480" stroke="#1a1410" stroke-width="0.7" stroke-dasharray="4 3"/>
-      <line x1="40" y1="260.0" x2="480" y2="260.0" stroke="#1a1410" stroke-width="0.7" stroke-dasharray="4 3"/>
-      <text x="260.0" y="28" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="middle" letter-spacing="1.5">↑ COOL</text>
-      <text x="260.0" y="502" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="middle" letter-spacing="1.5">↓ CRINGE</text>
-      <text x="32" y="264.0" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="end" letter-spacing="1.5">HATED ←</text>
-      <text x="488" y="264.0" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="start" letter-spacing="1.5">→ LOVED</text>
-      <circle cx="414.0" cy="62.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="420.0" y="65.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Apple</text>
-      <circle cx="392.0" cy="84.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="398.0" y="87.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Nvidia</text>
-      <circle cx="370.0" cy="106.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="376.0" y="109.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Stripe</text>
-      <circle cx="348.0" cy="128.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="354.0" y="131.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Anthropic</text>
-      <circle cx="370.0" cy="172.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="376.0" y="175.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Shopify</text>
-      <circle cx="326.0" cy="150.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="332.0" y="153.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Notion</text>
-      <circle cx="392.0" cy="194.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="398.0" y="197.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Spotify</text>
-      <circle cx="348.0" cy="216.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="354.0" y="219.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Airbnb</text>
-      <circle cx="194.0" cy="106.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="109.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">OpenAI</text>
-      <circle cx="128.0" cy="84.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="134.0" y="87.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Tesla</text>
-      <circle cx="106.0" cy="150.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="112.0" y="153.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Meta</text>
-      <circle cx="62.0" cy="172.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="68.0" y="175.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">X</text>
-      <circle cx="172.0" cy="194.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="178.0" y="197.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Uber</text>
-      <circle cx="326.0" cy="304.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="332.0" y="307.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Microsoft</text>
-      <circle cx="304.0" cy="348.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="310.0" y="351.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Workday</text>
-      <circle cx="348.0" cy="326.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="354.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Netflix</text>
-      <circle cx="128.0" cy="326.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="134.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Amazon</text>
-      <circle cx="194.0" cy="282.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="285.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Alphabet</text>
-      <circle cx="194.0" cy="392.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Salesforce</text>
-      <circle cx="62.0" cy="436.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="68.0" y="439.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Oracle</text>
-      <circle cx="150.0" cy="414.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="417.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">SAP</text>
-      <circle cx="150.0" cy="458.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="461.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">NetSuite</text>
-      <circle cx="216.0" cy="436.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="439.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">IBM</text>
-      <circle cx="106.0" cy="370.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="112.0" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Adobe</text>
-      <circle cx="194.0" cy="436.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="439.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">ServiceNow</text>
-      <circle cx="172.0" cy="392.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="178.0" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Atlassian</text>
-      <circle cx="150.0" cy="370.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Snowflake</text>
-    </svg></div>
-      <p class="section-body" style="font-size: 13px; color: var(--teal); font-style: italic;">Tesla is the textbook "cool but hated." Apple owns top-right by sheer brand force. Oracle anchors the cursed pit.</p>
+    <div class="tags">
+      <span class="tag tag-1">Stagnant + sketchy</span>
+      <span class="tag tag-2">Cool + loved</span>
     </div>
-
     <div class="section">
-      <div class="section-label">Matrix 3 · Dateable × Family-approved</div>
-      <div style="margin: 1rem 0;"><svg viewBox="0 0 520 550" role="img" aria-label="Dateable × Family-approved matrix" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-      <rect x="40" y="40" width="440" height="440" fill="#ffffff" stroke="#1a1410" stroke-width="1.5"/>
-      <line x1="260.0" y1="40" x2="260.0" y2="480" stroke="#1a1410" stroke-width="0.7" stroke-dasharray="4 3"/>
-      <line x1="40" y1="260.0" x2="480" y2="260.0" stroke="#1a1410" stroke-width="0.7" stroke-dasharray="4 3"/>
-      <text x="260.0" y="28" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="middle" letter-spacing="1.5">↑ WOULD DATE</text>
-      <text x="260.0" y="502" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="middle" letter-spacing="1.5">↓ WOULD NOT DATE</text>
-      <text x="32" y="264.0" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="end" letter-spacing="1.5">FAMILY DISAPPROVES ←</text>
-      <text x="488" y="264.0" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="900" fill="#3e1212" text-anchor="start" letter-spacing="1.5">→ FAMILY APPROVES</text>
-      <circle cx="436.0" cy="106.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="442.0" y="109.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Stripe</text>
-      <circle cx="392.0" cy="128.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="398.0" y="131.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Anthropic</text>
-      <circle cx="414.0" cy="84.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="420.0" y="87.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Apple</text>
-      <circle cx="370.0" cy="62.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="376.0" y="65.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Nvidia</text>
-      <circle cx="392.0" cy="194.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="398.0" y="197.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Workday</text>
-      <circle cx="414.0" cy="150.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="420.0" y="153.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Shopify</text>
-      <circle cx="348.0" cy="216.0" r="4" fill="#1D9E75" stroke="#1a1410" stroke-width="0.5"/><text x="354.0" y="219.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Microsoft</text>
-      <circle cx="150.0" cy="106.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="109.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Tesla</text>
-      <circle cx="194.0" cy="128.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="131.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">OpenAI</text>
-      <circle cx="106.0" cy="150.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="112.0" y="153.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Meta</text>
-      <circle cx="62.0" cy="172.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="68.0" y="175.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">X</text>
-      <circle cx="216.0" cy="172.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="175.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Spotify</text>
-      <circle cx="194.0" cy="194.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="197.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Airbnb</text>
-      <circle cx="238.0" cy="150.0" r="4" fill="#D85A30" stroke="#1a1410" stroke-width="0.5"/><text x="244.0" y="153.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Notion</text>
-      <circle cx="348.0" cy="414.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="354.0" y="417.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">IBM</text>
-      <circle cx="326.0" cy="392.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="332.0" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">SAP</text>
-      <circle cx="304.0" cy="436.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="310.0" y="439.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">NetSuite</text>
-      <circle cx="326.0" cy="348.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="332.0" y="351.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Snowflake</text>
-      <circle cx="370.0" cy="392.0" r="4" fill="#378ADD" stroke="#1a1410" stroke-width="0.5"/><text x="376.0" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">ServiceNow</text>
-      <circle cx="62.0" cy="436.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="68.0" y="439.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Oracle</text>
-      <circle cx="128.0" cy="304.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="134.0" y="307.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Amazon</text>
-      <circle cx="194.0" cy="282.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="200.0" y="285.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Alphabet</text>
-      <circle cx="172.0" cy="326.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="178.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Salesforce</text>
-      <circle cx="106.0" cy="370.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="112.0" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Adobe</text>
-      <circle cx="150.0" cy="414.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="417.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Atlassian</text>
-      <circle cx="216.0" cy="326.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="222.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Netflix</text>
-      <circle cx="150.0" cy="304.0" r="4" fill="#5F5E5A" stroke="#1a1410" stroke-width="0.5"/><text x="156.0" y="307.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#1a1410">Uber</text>
-    </svg></div>
-      <p class="section-body" style="font-size: 13px; color: var(--teal); font-style: italic;">Stripe is what your mother actually wants you to marry. Oracle is in jail.</p>
+      <div class="section-label">The energy</div>
+      <p class="section-body">Lives in a 4,000 sqft loft with one Eames chair and a single ceramic bowl. Removed the headphone jack and made you applaud. Sells $19 cleaning cloths.</p>
     </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-top: 2rem;">
-      <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-family: Helvetica, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink);">
-        <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #1D9E75; border: 1px solid var(--ink);"></span>Top-right
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">The Vision Pro was the most expensive way ever invented to look stupid in your living room, and people bought it. Hardware is the best on Earth, which is what gives them the moral authority to charge $999 for a monitor stand.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>It just works.</li>
+        <li>Courage.</li>
+        <li>We think you're going to love it.</li>
+        </ul>
       </div>
-      <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-family: Helvetica, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink);">
-        <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #D85A30; border: 1px solid var(--ink);"></span>Top-left
-      </div>
-      <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-family: Helvetica, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink);">
-        <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #378ADD; border: 1px solid var(--ink);"></span>Bottom-right
-      </div>
-      <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-family: Helvetica, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink);">
-        <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #5F5E5A; border: 1px solid var(--ink);"></span>Bottom-left
-      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You haven't had an original idea since Steve died and the whole world is just pretending."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Open the App Store. Developers are not your tenants.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Refers to the home button in the past tense, sadly, like an ex.</div>
     </div>
   </div>
 </article>
 
+<article class="card" data-index="8" id="card-8">
+  <div class="hero">
+    <img class="hero-img" src="images/atlassian-wombat.jpg" alt="Common wombat representing Atlassian" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(atlassian-wombat.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Atlassian</div>
+      <div class="animal-tag">Common wombat · Gen X</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">Australian middle manager you keep confusing with the other Australian middle manager.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Untucked Bonobos shirt, chinos, brown leather Cole Haans, lanyard with three offsite badges</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Long black in the morning, a single craft IPA at the airport bar at 4 PM</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Anti-cool. Aggressively so. The mascot energy is strong.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Stagnant + sketchy</span>
+      <span class="tag tag-2">Cringe + hated</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Owns Jira, Confluence, Trello, Bitbucket, and your sprint retro. Every engineer hates him and uses him eight hours a day.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Jira tickets that take longer to write than the work itself. The board has 247 columns and nobody knows which one is "in progress."</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Unleash the potential of every team.</li>
+        <li>Have you tagged it in the epic?</li>
+        <li>Quick question — can you add this to the backlog?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"Jira is the punishment management gives itself for being management."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Make Jira fast. Even a little. We'd notice.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">"Quick question — can you add this to the backlog?"</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="9" id="card-9">
+  <div class="hero">
+    <img class="hero-img" src="images/ibm-tortoise.jpg" alt="Galápagos tortoise representing IBM" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(ibm-tortoise.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">IBM</div>
+      <div class="animal-tag">Galápagos tortoise · Silent generation</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">Your grandfather who was a big deal once.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Charcoal three-piece suit, navy tie, French cuffs, polished oxfords, pocket square</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Old Fashioned. Bourbon, not rye. The bartender already knows.</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Zero, but historically significant.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Stagnant + ethical</span>
+      <span class="tag tag-2">Cringe + hated</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Pre-existed two world wars. Invented the hard drive, the barcode, the credit card stripe.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Watson did not cure cancer despite the commercials. Bought Red Hat for $34B and HashiCorp for $6.4B hoping young people might think he's cool by association. They don't.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>When I was at Endicott…</li>
+        <li>Hybrid cloud.</li>
+        <li>We've been doing AI since 1956.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You invented the future and then spent 60 years subcontracting it back."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Stop pretending Watson is current. Lead with quantum.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Still refers to laptops as "ThinkPads" in casual conversation.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="10" id="card-10">
+  <div class="hero">
+    <img class="hero-img" src="images/meta-gorilla.jpg" alt="Silverback gorilla representing Meta" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(meta-gorilla.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Meta</div>
+      <div class="animal-tag">Silverback gorilla · Younger millennial</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The reformed theater kid who discovered jiu-jitsu and a podcast microphone in the same week.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Compression shirt, oversized gold chain, grappling shorts, smart glasses indoors</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Electrolyte stack with creatine. "I don't really drink anymore, brother."</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Surprisingly high. Instagram still prints money. The Ray-Bans are unironically slick.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Innovative + sketchy</span>
+      <span class="tag tag-2">Cool + hated</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Used to apologize to Congress in a chair too big for him. Now wants to cage-fight a billionaire and has <em>opinions</em> about masculine energy in the workplace. The metaverse was his crypto phase — we don't talk about it. AI is the new fixation; the Ray-Bans are unironically cool, which somehow makes it worse.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Announced firing 5% of "low-performers" in January while doing a hyrox event for content. The midlife crisis didn't even pretend to be subtle.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>I'm just optimizing.</li>
+        <li>Brother.</li>
+        <li>It's actually a discipline thing.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"Your entire personality is a midlife crisis with a Series A."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Pick a lane: AI or metaverse. The both-and energy is exhausting.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Has a cold plunge in his office bathroom and made it a KPI.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="11" id="card-11">
+  <div class="hero">
+    <img class="hero-img" src="images/microsoft-elephant.jpg" alt="African elephant representing Microsoft" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(microsoft-elephant.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Microsoft</div>
+      <div class="animal-tag">African elephant · Gen X</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">Reformed 90s bully who got therapy and now quietly owns everything.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Soft black crewneck, charcoal trousers, leather loafers, glasses he definitely needs</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Masala chai, "but the coffee's fine if that's easier"</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Higher than it should be. Teams is a war crime, Excel is a religion, Copilot is the only AI feature your boss has heard of.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Stagnant + ethical</span>
+      <span class="tag tag-2">Cringe + loved</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Said "growth mindset" out loud without flinching, then bought GitHub, LinkedIn, Activision, Minecraft, and half of OpenAI while everyone was admiring the glow-up.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Champions hybrid work that actually works. Though an employee noted that "firmer performance expectations" are creeping in now too. The bully has relapses.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Empathy.</li>
+        <li>Learn it all, not know it all.</li>
+        <li>What if we partnered?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You bought your way out of irrelevance and called it strategy."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Fix Teams. Or burn it down. Either works.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Already owns your company. You just don't know yet.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="12" id="card-12">
+  <div class="hero">
+    <img class="hero-img" src="images/netflix-cat.jpg" alt="House cat representing Netflix" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(netflix-cat.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Netflix</div>
+      <div class="animal-tag">House cat · Elder millennial</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The cool older sibling who got lazy and started phoning it in.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Vintage tee, joggers, slides with socks, looks expensive but isn't trying</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Natural wine, "I've been getting into orange wines actually"</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Faded. Even the guy who coined FAANG suggested replacing Netflix with Microsoft — that's a demotion.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Stagnant + sketchy</span>
+      <span class="tag tag-2">Cringe + loved</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Killed Blockbuster, invented streaming, made prestige TV, now the algorithm thinks you want Love is Blind: Estonia.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Cancels your favorite show after one season, greenlights a sixth season of one you forgot existed.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>It's a limited series.</li>
+        <li>(It is not.)</li>
+        <li>Are you still watching?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You killed cable to become worse cable with a password crackdown."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Let a show run more than two seasons before canceling it.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Three separate password-sharing crackdown emails this quarter.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="13" id="card-13">
+  <div class="hero">
+    <img class="hero-img" src="images/netsuite-opossum.jpg" alt="Virginia opossum representing NetSuite" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(netsuite-opossum.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">NetSuite</div>
+      <div class="animal-tag">Virginia opossum · Boomer</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">Oracle's stepkid that nobody remembers at family dinner.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Short-sleeve dress shirt, khakis, lanyard with three expired badges</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Whatever the conference room had. "Regular or decaf?"</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">None. Logo is still that exact shade of 2003 blue.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Stagnant + sketchy</span>
+      <span class="tag tag-2">Cringe + hated</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Got adopted by Larry in 2016 and has been at the kids' table ever since. Sells "real ERP" to Series B startups that graduated from QuickBooks and can't afford SAP.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Like an off-brand suit you wear to your first big job interview. Will absolutely show up to the family reunion and nobody can quite remember what he does.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>It scales with you.</li>
+        <li>We're cloud-native.</li>
+        <li>(He is debatably not.)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You're what happens when QuickBooks gets ideas above its station."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Update the UI to a year that ends in 2.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Tells people he works at Oracle.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="14" id="card-14">
+  <div class="hero">
+    <img class="hero-img" src="images/notion-raccoon.jpg" alt="Raccoon representing Notion" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(notion-raccoon.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Notion</div>
+      <div class="animal-tag">Raccoon · Gen Z</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">Design school dropout who built a productivity app and accidentally a cult.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Linen shirt, Uniqlo wide-legs, Birkenstock Bostons, tortoiseshell glasses, one (1) ring</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Hojicha latte, oat milk, "have you tried it?"</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Aesthetic-cool, productivity-questionable.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Stagnant + sketchy</span>
+      <span class="tag tag-2">Cool + loved</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Has 14 different "second brain" templates. Has used none of them past day three. Built a personal wiki for a life he isn't living.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">The app is gorgeous and slow. Every page is a database that's a page that's a database. You will spend 40 minutes building a habit tracker and never track a habit.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Your all-in-one workspace.</li>
+        <li>It's so customizable.</li>
+        <li>Have you seen my template?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You convinced an entire generation that procrastination is a productivity system."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Make it fast. Pages shouldn't load like dial-up.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Just bought a $500 stationery set "to think on paper instead."</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="15" id="card-15">
+  <div class="hero">
+    <img class="hero-img" src="images/nvidia-wolf.jpg" alt="Gray wolf representing Nvidia" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(nvidia-wolf.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Nvidia</div>
+      <div class="animal-tag">Gray wolf · Gen X</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The quiet kid who sold pickaxes in the gold rush and now owns the mountain.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Black leather jacket. Always. The jacket has its own Wikipedia page in spirit.</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Whatever's on the table — doesn't notice, already thinking about the next thing</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Currently maximum. Every AI startup is paying him rent and pretending they aren't.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Innovative + sketchy</span>
+      <span class="tag tag-2">Cool + loved</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Spent 30 years making graphics cards for nerds, woke up one Tuesday as the most valuable company on Earth.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">The whole AI economy collapses if he sneezes. One bad quarter from any of his three biggest customers and the stock chart looks like a black diamond run.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Accelerated computing.</li>
+        <li>The more you buy, the more you save.</li>
+        <li>We are the platform.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"Your entire valuation rests on three customers and a vibe."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Diversify the customer base. Right now, one bad AI quarter ends you.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">The whole AI economy collapses if he sneezes.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="16" id="card-16">
+  <div class="hero">
+    <img class="hero-img" src="images/openai-octopus.jpg" alt="Mimic octopus representing OpenAI" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(openai-octopus.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">OpenAI</div>
+      <div class="animal-tag">Mimic octopus · Gen Z</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The hot startup protagonist with a tragic backstory and a coup subplot.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Patagonia vest, but ironically. Or sincerely. Unclear.</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Soylent. Then a $19 cocktail at a SoMa bar.</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">The main character of every dinner conversation in 2026.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Innovative + sketchy</span>
+      <span class="tag tag-2">Cool + hated</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Started as a nonprofit, became the most valuable startup on Earth, fired the CEO on a Friday, rehired him by Wednesday.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Sells AI to everyone, including their own biggest investor Microsoft. The board has a group chat and you're not in it.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>AGI is coming.</li>
+        <li>Safety is our top priority.</li>
+        <li>We're a research lab. (We are not.)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You started a nonprofit to save humanity and ended up a $300B IP lawsuit."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Pick a corporate structure. Stick to it for one fiscal year.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">The board has a group chat and you're not in it.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="17" id="card-17">
+  <div class="hero">
+    <img class="hero-img" src="images/oracle-crocodile.jpg" alt="Saltwater crocodile representing Oracle" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(oracle-crocodile.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Oracle</div>
+      <div class="animal-tag">Saltwater crocodile · Silent generation</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">What if a Bond villain decided databases were more profitable than nuclear submarines?</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Open-collar Brioni, gold watch, deck shoes — came from the boat</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Macallan 25, neat, "and one for my litigator"</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Zero. But the yacht is incredible.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Stagnant + sketchy</span>
+      <span class="tag tag-2">Cringe + hated</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Sues for sport. Owns an island. Donated a building to himself. The revenue model is "license you something, then audit you for using it the way you thought you were allowed to."</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Customer experience around implementation and support receives mixed reviews — enterprise software for "we have you in a chokehold and you knew the terms."</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>We'll see you in court.</li>
+        <li>Cloud-first.</li>
+        <li>Java was always ours.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"Your business model is hostage negotiation with extra steps."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Stop the licensing audits. Make money the normal way.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">His yacht has a smaller yacht inside it.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="18" id="card-18">
+  <div class="hero">
+    <img class="hero-img" src="images/salesforce-peacock.jpg" alt="Indian peacock representing Salesforce" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(salesforce-peacock.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Salesforce</div>
+      <div class="animal-tag">Indian peacock · Boomer</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">Wellness bro selling you a CRM and a crystal.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Aloha shirt, jeans, Hokas, mala beads, statement turquoise ring</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Green juice "with the adaptogens." Also kombucha. Sometimes both.</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Cringe-cool. Trailhead is unironically fun. The mascot is a raccoon named Astro.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Stagnant + sketchy</span>
+      <span class="tag tag-2">Cringe + hated</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Has a Buddhist monk, a redwood tree, and an "ohana wall" in the office at the same time. Brought the Dalai Lama to Dreamforce one year and Metallica another.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Bought Slack ($28B), Tableau ($15.7B), MuleSoft ($6.5B) and dragged them all into the Trailblazer Cinematic Universe. The product is a CRM that ate every adjacent category.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Ohana.</li>
+        <li>We're a values-led company.</li>
+        <li>Have you met our Chief Trust Officer?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You bought a magazine to make yourself feel important. It didn't work."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Drop one Cloud. Any of them. Just one.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Owns Time Magazine. As in, the magazine.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="19" id="card-19">
+  <div class="hero">
+    <img class="hero-img" src="images/sap-shepherd.jpg" alt="German shepherd representing SAP" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(sap-shepherd.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">SAP</div>
+      <div class="animal-tag">German shepherd · Boomer</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The German engineer with strong opinions about process.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Crisp white shirt, no tie, pressed slacks, leather lace-ups, a Mont Blanc clipped inside the pocket</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">One Riesling at 6:47 PM exactly. One. Then water.</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Negative. But efficient.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Stagnant + sketchy</span>
+      <span class="tag tag-2">Cringe + hated</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Does not bring snacks. Does not approve of snacks. ABAP exists exclusively to make grown developers weep into their Spezi. The S/4HANA migration has been "almost done" since 2017.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">And yet — SAP remains the fastest-growing enterprise apps player by far, outpacing Oracle and Salesforce by more than 100%. The Germans, as always, are quietly winning.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Per the methodology.</li>
+        <li>We have a SAP-approved partner for this.</li>
+        <li>Please refer to slide 47.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You charge millions for software that looks like Windows 95 reported to HR."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Retire ABAP. Apologize to every developer alive.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Has binders. Plural. Color-coded by fiscal year.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="20" id="card-20">
+  <div class="hero">
+    <img class="hero-img" src="images/servicenow-mole.jpg" alt="European mole representing ServiceNow" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(servicenow-mole.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">ServiceNow</div>
+      <div class="animal-tag">European mole · Boomer</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The IT helpdesk guy who somehow became a $200B company while nobody was looking.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Untucked plaid button-down, Costco jeans, sensible sneakers, badge clip from 2014</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Diet Coke. Multiple. Throughout the day. Possibly with lunch.</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Invisible. Which is, financially, the move.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Stagnant + sketchy</span>
+      <span class="tag tag-2">Cringe + hated</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">You opened a ticket in 2019. He has not closed it. He has, however, added 14 stakeholders and a workflow.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Nobody outside enterprise IT has heard of him. He is worth more than Adobe. Let that sit.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>The platform of platforms.</li>
+        <li>Workflow automation.</li>
+        <li>Have you opened a ticket?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"Nobody outside IT can name a single thing you do, and you charge them $4M a year for it."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Build something a regular human could explain.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Your "AI agent" pilot somehow costs $4M a year and nobody can explain what it does.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="21" id="card-21">
+  <div class="hero">
+    <img class="hero-img" src="images/shopify-beaver.jpg" alt="North American beaver representing Shopify" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(shopify-beaver.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Shopify</div>
+      <div class="animal-tag">North American beaver · Younger millennial</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The Canadian guy who really wants you to start a business.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Patagonia Better Sweater, Lululemon ABC pants, a beanie indoors, AirPods Pro</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Cold brew with MCT oil, "I do one meal a day, eh"</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Wholesome-cool. The opposite of Bezos energy.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Innovative + ethical</span>
+      <span class="tag tag-2">Cool + loved</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Sincerely believes "entrepreneurship is the answer." Will sell you a course about it. Then a Shopify subscription. Then an app from the Shopify App Store.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Half of Instagram is running on him and the merchants don't even know it.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Arming the rebels.</li>
+        <li>Make commerce better for everyone.</li>
+        <li>Have you tried our new app store?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You're an AliExpress reseller pipeline wearing a 'small business' t-shirt."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Vet the dropshippers. The app store is a flea market.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Tobi has a sword in his office. Not metaphorical. An actual sword.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="22" id="card-22">
+  <div class="hero">
+    <img class="hero-img" src="images/snowflake-bear.jpg" alt="Polar bear representing Snowflake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(snowflake-bear.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Snowflake</div>
+      <div class="animal-tag">Polar bear · Gen X</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The data warehouse with a price tag that gives CFOs night sweats.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Navy quarter-zip, gray slacks, AirPods, badge from a Gartner conference</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Black coffee, "make it a double, I have a board meeting"</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Engineer-cool, finance-cursed.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Stagnant + sketchy</span>
+      <span class="tag tag-2">Cringe + hated</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Quietly the most expensive thing on your stack. You query a table. A credit dies. You query it again. Another credit dies.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">The bill arrives. The CFO opens it. The CFO closes it. The CFO opens it again. The number has not changed.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Data cloud.</li>
+        <li>Consumption-based pricing.</li>
+        <li>It's only $40K a month.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You're a database that charges by the query like it's a 1-900 number."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Predictable pricing. The credits system is a trauma response.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">"It's only $40K a month" — first month.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="23" id="card-23">
+  <div class="hero">
+    <img class="hero-img" src="images/spotify-magpie.jpg" alt="Eurasian magpie representing Spotify" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(spotify-magpie.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Spotify</div>
+      <div class="animal-tag">Eurasian magpie · Younger millennial</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The indie kid who used to make mixtapes and now drives a Porsche.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">A&F tee re-worn ironically, Acne jeans, vintage New Balance, AirPods Pro permanently in</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Cortado, then a natural wine, then "honestly just a beer"</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Faded. AI-generated artists keep showing up in your Discover Weekly and you can't unsee it.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Stagnant + sketchy</span>
+      <span class="tag tag-2">Cool + loved</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Knew about the band before you did. Now algorithmically tells you about a different one and pays them $0.003 per stream.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Wrapped is the best marketing campaign of the decade. The artists hosting it are eating ramen.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Music for every moment.</li>
+        <li>Discovery.</li>
+        <li>Wrapped is here!</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You pay artists $0.003 a stream and spent $200M on one podcaster."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Pay artists a living wage. Or at least a noticeable one.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Your favorite podcast is now an exclusive and you have to switch apps to listen to it.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="24" id="card-24">
+  <div class="hero">
+    <img class="hero-img" src="images/stripe-collie.jpg" alt="Border collie representing Stripe" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(stripe-collie.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Stripe</div>
+      <div class="animal-tag">Border collie · Younger millennial</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The polite Irish twins who quietly run the internet's checkout.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Uniqlo cashmere crewneck, dark APC jeans, Common Projects, no logos anywhere</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Flat white. One. Doesn't make a thing of it.</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Maximum quiet-cool. The Phoebe Philo of fintech.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Innovative + ethical</span>
+      <span class="tag tag-2">Cool + loved</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Doesn't post. Doesn't tweet. Just processes 1% of global GDP and goes home to read.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">The docs are so good developers cry. The company is privately valued at $90B and barely has a marketing department.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Increase the GDP of the internet.</li>
+        <li>(Yes. Sincerely.)</li>
+        <li>Let's not announce that.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You're so afraid to IPO your employees have founded second companies waiting for it."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Go public already. We've waited a decade.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Will be public someday. The IPO will be the only thing he ever says loudly.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="25" id="card-25">
+  <div class="hero">
+    <img class="hero-img" src="images/tesla-cheetah.jpg" alt="Cheetah representing Tesla" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(tesla-cheetah.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Tesla</div>
+      <div class="animal-tag">Cheetah · Younger millennial</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The charismatic founder whose personal brand IS the stock price.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Black tee, jeans, sometimes a leather jacket, sometimes a cape (literal, at events)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Red Bull and Ambien, allegedly, per court filings</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Plummeting in real time. Stock price defies gravity, physics, and SEC filings simultaneously.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Innovative + sketchy</span>
+      <span class="tag tag-2">Cool + hated</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Cars are genuinely innovative. Build quality varies by which way the wind was blowing at Fremont that morning.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Cybertruck looks like it was designed in DOS and yet people pay extra for it. "Full self-driving next year" — every year, since 2016.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Next year.</li>
+        <li>Robotaxi soon.</li>
+        <li>Production hell.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You're a car company priced like a religion."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Separate the company from the CEO's social media.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Posts at 3 AM. About you. Maybe.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="26" id="card-26">
+  <div class="hero">
+    <img class="hero-img" src="images/uber-hyena.jpg" alt="Spotted hyena representing Uber" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(uber-hyena.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Uber</div>
+      <div class="animal-tag">Spotted hyena · Elder millennial</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The frat bro who took one ethics class and called it a personality.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Vuori joggers, Lululemon ABC pants for "meetings," Yeezys, Whoop band on the wrist</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Athletic Greens in the morning, mezcal old fashioned at night, "I'm cutting back"</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Was once dangerous. Now corporate-cool, which is its own thing.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Innovative + sketchy</span>
+      <span class="tag tag-2">Cringe + hated</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Used to break the law on principle. Now talks about "operational discipline" and goes to bed at 9:30.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Owns the road, the food, the freight, and a quiet stake in your weekend plans. Eats Postmates because he owns Postmates.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Earner experience.</li>
+        <li>We're a platform, not an employer.</li>
+        <li>(Court disagrees.)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You're a taxi company that lost money for a decade and called it disruption."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Pay drivers like employees. The math still works.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Surge pricing during a hurricane is a "market signal."</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="27" id="card-27">
+  <div class="hero">
+    <img class="hero-img" src="images/workday-retriever.jpg" alt="Golden retriever representing Workday" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(workday-retriever.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">Workday</div>
+      <div class="animal-tag">Golden retriever · Elder millennial</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The HR director who's actually cool — runs marathons, knows your name.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Lululemon Define jacket, dark wash jeans, gold Mejuri stack, AirPods Max around the neck</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Matcha latte with oat milk, and a sparkling water with lime, "thank you so much!"</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">The acceptable face of enterprise software.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Innovative + ethical</span>
+      <span class="tag tag-2">Cringe + loved</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Escaped from Oracle in 2005 to start the nicer version. Brings homemade lemon scones to the all-hands.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Widely viewed as the leader in modern HCM with a user-friendly interface — premium pricing, but everything else looks like Windows XP next to her.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Let's circle back.</li>
+        <li>Just to put a pin in it.</li>
+        <li>Be well!</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You're the only software that bills like a divorce attorney and smiles while doing it."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">Cut implementation cost by half. Stop charging like a wedding.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">Implementation costs more than your house.</div>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-index="28" id="card-28">
+  <div class="hero">
+    <img class="hero-img" src="images/x-vulture.jpg" alt="Turkey vulture representing X" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hero-placeholder" style="display:none;">
+      Place generated photo here<br/><small style="opacity:0.6;">(x-vulture.jpg)</small>
+    </div>
+    <div class="name-banner">
+      <div class="company-name">X</div>
+      <div class="animal-tag">Turkey vulture · Gen Alpha</div>
+    </div>
+  </div>
+  <div class="body-content">
+    <p class="archetype">The friend going through a very public rough divorce.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Outfit</div>
+        <div class="meta-value">Sometimes a suit, sometimes a costume, occasionally a t-shirt that says something concerning</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Drink order</div>
+        <div class="meta-value">Whatever's been left on the bar, possibly someone else's</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cool factor</div>
+        <div class="meta-value">Negative. Aggressively so.</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Innovative + sketchy</span>
+      <span class="tag tag-2">Cool + hated</span>
+    </div>
+    <div class="section">
+      <div class="section-label">The energy</div>
+      <p class="section-body">Used to be the smartest, funniest one in the room. Now you can't look away but feel bad about it.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">The tell</div>
+      <p class="section-body">Gutted 6,000+ staff after acquisition. "Ruling with fear over incentives" became a poster-child management style.</p>
+    </div>
+    <div class="section">
+      <div class="section-label">Things they say constantly</div>
+      <div class="quotes">
+        <ul class="quotes-list">
+        <li>Free speech.</li>
+        <li>Legacy media is lying.</li>
+        <li>The algorithm changed.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="burn">
+      <div class="burn-label">★ The burn ★</div>
+      <p class="burn-quote">"You paid $44 billion to ruin a website that was already free."</p>
+    </div>
+    <div class="glow">
+      <div class="glow-label">↗ Glow-up move</div>
+      <p class="glow-text">A CEO whose entire personality isn't the timeline.</p>
+    </div>
+    <div class="red-flag">
+      <span class="red-flag-icon">Red flag</span>
+      <div class="red-flag-text">The blue check is now a red flag.</div>
+    </div>
+  </div>
+</article>
 </div>
 
 <footer>The big tech personality audit · 27 specimens classified · 1 summary</footer>
@@ -2718,25 +2719,42 @@
   const cards = Array.from(document.querySelectorAll('.card'));
   const prevBtn = document.getElementById('prev-btn');
   const nextBtn = document.getElementById('next-btn');
-  const currentNum = document.getElementById('current-num');
+  const statusText = document.getElementById('status-text');
   const select = document.getElementById('pager-select');
   let idx = 0;
 
   function pad(n) { return String(n).padStart(2, '0'); }
 
+  const nameToIdx = {};
   cards.forEach((card, i) => {
-    const name = card.querySelector('.company-name').textContent;
+    const name = card.querySelector('.company-name').textContent.trim();
+    nameToIdx[name] = i;
     const opt = document.createElement('option');
     opt.value = i;
-    opt.textContent = pad(i + 1) + ' · ' + name;
+    opt.textContent = name;
     select.appendChild(opt);
+  });
+
+  // Link each matrix dot label to its dossier
+  document.querySelectorAll('svg[aria-label$="matrix"] text').forEach((t) => {
+    if (t.getAttribute('font-size') !== '9') return;
+    const name = t.textContent.trim();
+    if (nameToIdx[name] === undefined) return;
+    t.style.cursor = 'pointer';
+    t.addEventListener('mouseenter', () => { t.style.textDecoration = 'underline'; });
+    t.addEventListener('mouseleave', () => { t.style.textDecoration = 'none'; });
+    t.addEventListener('click', () => { idx = nameToIdx[name]; render(); });
   });
 
   function render() {
     cards.forEach((card, i) => {
       card.classList.toggle('is-active', i === idx);
     });
-    currentNum.textContent = pad(idx + 1);
+    if (idx === 0) {
+      statusText.textContent = 'Explore the dossiers';
+    } else {
+      statusText.innerHTML = 'Dossier <strong>' + pad(idx) + '</strong> of <strong>27</strong>';
+    }
     select.value = idx;
     prevBtn.disabled = idx === 0;
     nextBtn.disabled = idx === cards.length - 1;
